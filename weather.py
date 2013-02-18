@@ -64,7 +64,10 @@ while True:
 
 		if weather is None or counter >= REFRESH:
 			temp, low, high, text = yahoo_weather(WOEID)
-			weather = "{:s} {:s}".format(temp, text)
+			if len(text) + len(temp) > 15:
+				text = text[:15 - len(temp)]
+			space = " " * (16 - len(temp) - len(text))
+			weather = "{:s}{:s}{:s}".format(text, space, temp)
 			counter = 0
 
 		line1 = d + " " * (16 - len(d) - len(t)) + t + "\n" + ""
