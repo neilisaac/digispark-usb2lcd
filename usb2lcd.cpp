@@ -34,6 +34,10 @@ void loop() {
 			lcd.setCursor(0, 0);
 			break;
 		}
+
+		else if (val == 256) {
+			lcd.clear();
+		}
 		
 		else if (val == '\n') {
 			lcd.setCursor(0, 1);

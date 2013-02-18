@@ -20,6 +20,8 @@ URL = "http://weather.yahooapis.com/forecastrss?w={:d}&u=c"
 NS = "http://xml.weather.yahoo.com/ns/rss/1.0"
 
 def lcd_write(device, first, second):
+	device.write(256)
+
 	for c in first:
 		device.write(ord(c))
 
